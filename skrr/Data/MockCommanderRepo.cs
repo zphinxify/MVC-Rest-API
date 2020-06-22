@@ -8,7 +8,7 @@ namespace skrr.Data
     {
         public IEnumerable<Command> AppCommands => throw new System.NotImplementedException();
 
-        public IEnumerable<Command> GetAppCommands()
+        public IEnumerable<Command> GetAllCommands()
         {
             var commands = new List<Command>
             {

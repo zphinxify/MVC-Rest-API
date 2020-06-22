@@ -32,7 +32,9 @@ namespace skrr
 
             services.AddControllers();
             
-            services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+            // services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+
+            services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
         }
 
 
