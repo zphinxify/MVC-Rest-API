@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-
+using skrr.Models;
 namespace skrr.Data
 {
     public class CommanderContext : DbContext
@@ -8,5 +8,7 @@ namespace skrr.Data
         {
             
         }
+
+        public DbSet<Command> Commands {get; set; }
     }
 }
