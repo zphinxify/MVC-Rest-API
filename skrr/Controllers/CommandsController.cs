@@ -50,6 +50,9 @@ namespace skrr.Controllers
             var commandModel = _mapper.Map<Command>(commandCreateDto);
             _repository.CreateCommand(commandModel);
 
+            //This is needed in order to save the changes to the DB
+            _repository.SaveChanges();
+
             return Ok(commandModel);
         }
 
