@@ -3,4 +3,4 @@ This is a MVC-Rest-API using Data Transfer Objects and the repository pattern in
 
 AutoMapper is used in order to map the DTO with the actual Object
 
-As for the DB I'm using a SQL server. Note that the password is directly exposed in the source code without any hashing or salt. This is not inteded for use in a production enviroment.
+As for the DB I'm using a SQL server. Note that the password is directly exposed in the source code without any hashing or salt. This is not inteded for use in a production environment.
