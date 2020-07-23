@@ -32,7 +32,7 @@ namespace skrr.Controllers
         }
 
         //Get api/commands/{id}
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name="GetCommandById")]
         public ActionResult<CommandReadDto> GetCommandById(int id)
         {
             var commandItem = _repository.GetCommandById(id);
@@ -53,7 +53,9 @@ namespace skrr.Controllers
             //This is needed in order to save the changes to the DB
             _repository.SaveChanges();
 
-            return Ok(commandModel);
+            var commandReadDto = _mapper.Map<CommandReadDto>(commandModel);
+
+            return CreatedAtRoute(nameof(GetCommandById), new {Id = commandReadDto.Id}, commandReadDto);
         }
 
     }
