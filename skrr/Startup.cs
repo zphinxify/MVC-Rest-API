@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,8 +32,9 @@ namespace skrr
                 (Configuration.GetConnectionString("CommanderConnection")));
 
             services.AddControllers();
-            
-            // services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+
+            // This is used to automatically map our Objects with the DTO's
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICommanderRepo, SqlCommanderRepo>();
         }
